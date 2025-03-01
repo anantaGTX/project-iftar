@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Numbers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .contact-line {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+        .number {
+            font-size: 1.2em;
+            min-width: 120px;
+        }
+        .logo-space {
+            width: 40px;
+            height: 40px;
+            background: #f0f0f0;
+            border-radius: 50%;
+        }
+        .copy-btn {
+            padding: 6px 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .copy-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- First Number Line -->
+    <div class="contact-line">
+        <img src="bkash.png" class ="logo-space">
+        <span class="number">01730995590</span>
+        <button class="copy-btn" onclick="copyNumber(this)">Copy</button>
+    </div>
+
+    <!-- Second Number Line -->
+    <div class="contact-line">
+        <img src="Nagad-Vertical-Logo.wine.svg" class ="logo-space">
+        <span class="number">01707325577</span>
+        <button class="copy-btn" onclick="copyNumber(this)">Copy</button>
+    </div>
+
+    <!-- Third Number Line -->
+    <div class="contact-line">
+        <img src="rocket-logo-1024x683.png" class ="logo-space">
+        <span class="number">01730995590</span>
+        <button class="copy-btn" onclick="copyNumber(this)">Copy</button>
+    </div>
+
+    <script>
+        function copyNumber(button) {
+            const number = button.previousElementSibling.textContent;
+            navigator.clipboard.writeText(number)
+                .then(() => alert('Copied: ' + number))
+                .catch(err => console.error('Copy failed:', err));
+        }
+    </script>
+</body>
+</html>
